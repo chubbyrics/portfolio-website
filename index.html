@@ -1,56 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rica Mae Rapatan's Portfolio, showcasing projects and contact details">
+    <title>Portfolio Website</title>
+    
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-  <header>
+    <!-- Navigation -->
     <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Rica Mae <span>Rapatan</span>
+            </div>
+            <div class="toggle-container">
+                <img id="theme-toggle-icon" src="assets/moon.png" alt="Dark Mode" onclick="toggleTheme()" />
+            </div>
+            
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    <a href="#Home">Home</a>
+                </div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+                    <a href="#About_Me">About Me</a>
+                </div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
+                    <a href="#Projects">Projects</a>
+                </div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+                    <a href="#Contacts">Contacts</a>
+                </div>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#Home">Home</a>
+                <a href="#About_Me">About Me</a>
+                <a href="#Projects">Projects</a>
+                <a href="#Contacts">Contacts</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <main>
-    <section id="about">
-      <h1>About Me</h1>
-      <p>Hello! I am a passionate programmer and graphic designer.</p>
+    <!-- Home Section -->
+    <section id="Home">
+        <div class="main-container">
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">
+                    Hey, I'm <span>Rica Mae</span>
+                </h1>
+                <div data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900" class="typewriter">
+                    I'm a <span class="typewriter-text"></span><label for="">|</label>
+                </div>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100" class="homeinfo">
+                    A BSIT student with a passion for web and software development. Learning new technologies and creating projects that make a difference. Excited to solve real-world problems through technology.
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/chubbyrics" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.facebook.com/ricamae.rapatanii" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+        
+            </div>
+            <div class="image" data-aos="zoom-in" data-aos-duration="3000">
+                <img src="assets/Profile.png" alt="Profile Picture" />
+            </div>
+        </div>
     </section>
 
-    <section id="projects">
-      <h1>Projects</h1>
-      <div class="project-gallery">
-        <!-- Add project cards here -->
-      </div>
+  <!-- About Me Section -->
+<section id="About_Me">
+    <div class="about-content" data-aos="fade-left" data-aos-duration="1500">
+        
+        <!-- About Me Image -->
+        <div class="about-image" data-aos="zoom-in">
+            <img src="assets/Aboutme.png" alt="About Me" />
+        </div>
+        
+        <!-- About Me Text -->
+        <div class="about-text">
+            <h2 class="about-title">About Me</h2>
+            <p>
+                I am a 3rd-year BSIT student at BISU Balilihan Campus with a passion for both technology and graphic design. 
+                Throughout my academic journey, I've explored various areas of IT, including programming, web development, 
+                and user experience design, while also honing my creative skills in graphic design.
+            </p>
+            
+            <p>
+                I enjoy blending my technical knowledge with my creative side, using graphic design to communicate ideas visually 
+                and make technology more accessible. Whether it's creating logos, user interfaces, or digital art, I aim to deliver 
+                designs that are both functional and aesthetically pleasing.
+            </p>
+        </div>
+        
+    </div>
+</section>
+
+    <!-- Projects Section -->
+    <section id="Projects" class="projects">
+        <h2 class="projects-heading" data-aos="fade-up" data-aos-duration="1500">Projects</h2>
+        
+        <!-- Category 1: Coding Projects (Apps,Systems) -->
+        <div class="category-container">
+            <h3 class="category-title" data-aos="fade-up" data-aos-duration="1500">Coding Projects</h3>
+            <div class="project-container">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="assets/heartpython.png" alt="Coding Project 1" class="card-image" />
+                        </div>
+                        <div class="card-back">
+                            <p>A simple python project that creates a heart shape using lines rotating around to create the shape</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="assets/cyberics1.png" alt="Coding Project 2" class="card-image" />
+                        </div>
+                        <div class="card-back">
+                            <p>A system made with java and xampp about an electronics management with crud functionality</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="assets/pos.png" alt="Coding Project 3" class="card-image" />
+                        </div>
+                        <div class="card-back">
+                            <p> Canteen Kiosk,A Java and Xampp project for with client-server and Crud functionality </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 2: Graphic Design Projects (Edits) -->
+        <div class="category-container">
+            <h3 class="category-title" data-aos="fade-up" data-aos-duration="1500">Graphic Design Edits</h3>
+            <div class="project-container">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="assets/bisubalilihan2023.jpg" alt="Design Edit 1" class="card-image" />
+                        </div>
+                        <div class="card-back">
+                            <p>Our University's Official Dp Blast for School Year 2023-2024,used as facebook profile template by students.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="assets/1d.jpg" alt="Design Edit 2" class="card-image" />
+                        </div>
+                        <div class="card-back">
+                            <p>A 1 Direction Poster,A project from our Multimedia Subject during 2nd year</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="assets/poster1.png" alt="Design Edit 3" class="card-image" />
+                        </div>
+                        <div class="card-back">
+                            <p>A project poster made for a client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-      <h1>Contact</h1>
-      <form id="contact-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  </main>
+    <!-- Contacts Section -->
+<section id="Contacts">
+    <h2 data-aos="fade-up" data-aos-duration="1500">Contacts</h2>
+    <p data-aos="fade-right" data-aos-duration="1500">
+        You can contact me via <a href="mailto:rapatanricamae@gmail.com"><i class="fas fa-envelope"></i> rapatanricamae@gmail.com</a>.
+        Or connect with me on social media!
+    </p>
 
-  <footer>
-    <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-  </footer>
+    <!-- Social Media Icons -->
+    <div class="social-media-icons" style="text-align: center;">
+        <a href="https://github.com/chubbyrics" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.facebook.com/ricamae.rapatanii" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
 
-  <script src="script.js"></script>
+    <div class="contact-container">
+        <form id="contactForm" onsubmit="return validateForm()" data-aos="fade-up" data-aos-duration="1500">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="e.g. Juan Dela Cruz">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="e.g. delacruz00@gmail.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" onclick="sendMail()">Submit</button>
+        </form>
+        <!-- Notification Modal -->
+        <div id="notification" class="notification">
+            <div class="notification-content">
+                <p id="notification-message"></p>
+                <button id="notification-close" class="close-btn">Close</button>
+            </div>
+        </div>  
+    </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 Rica Mae Rapatan. All rights reserved.</p>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+    </script>
+    <script src="script.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "S4SyvUdha2fv1eq1T",
+      });
+   })();
+</script>
 </body>
 </html>

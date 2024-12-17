@@ -1,64 +1,738 @@
-/* General Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(7, 7, 7); /* Dark background */
+    color: white; /* Light text color */
+    overflow-y: scroll; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Dark mode styling */
+body.dark-mode {
+    background-color: rgb(7, 7, 7);
+    color: white;
+}
+
+/* Light mode styling */
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+/* Styling for the theme icon */
+.theme-icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+/* Optionally, you can add hover effect on the moon/sun icon */
+.theme-icon:hover {
+    opacity: 0.7;
+}
+
+/* Hide the scrollbar in webkit browsers */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* General light-mode text styling */
+body.light-mode h1,
+body.light-mode h1 span,
+body.light-mode p,
+body.light-mode .homeinfo {
+    color: black; /* Set text color to black in light mode */
+}
+
+/* Preserve the <span> inside the h1 */
+body.light-mode h1 span {
+    color: rgb(211, 3, 3); /* Red color for the glowing effect remains unchanged */
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+}
+
+/* Typewriter text section styling */
+body.light-mode .typewriter {
+    color: black; /* "I'm a" text set to black */
+}
+
+body.light-mode .typewriter-text {
+    color: rgb(211, 3, 3); /* The typewriter text remains red */
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+}
+
+/* 'AN INFORMATION TECHNOLOGY STUDENT' text */
+body.light-mode .homeinfo {
+    color: black; /* Set the paragraph text color to black */
+}
+
+/* 'About Me' paragraph */
+body.light-mode .about-text p {
+    color: black; /* Change the text in <p> under 'About Me' to black */
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0; /* Keeps the nav bar at the top when scrolling */
+    z-index: 1000;
+    backdrop-filter: blur(10px) brightness(90%); /* Adjusted brightness for lighter look */
+    background: rgba(0, 0, 0, 0.4); /* Slightly lighter black */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Softer shadow */
+    padding: 0 20px; /* Added padding for spacing */
+}
+
+/* Ensure the nav-container uses flexbox to align items */
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Space between logo and other items */
+    align-items: center; /* Vertically center the items */
+    width: 100%; /* Full width */
+    padding: 10px 20px; /* Adjust padding if necessary */
+}
+
+/* Ensure the logo doesn't break into multiple lines */
+.logo {
+    font-size: 2rem; /* Set font size for the logo */
+    font-weight: bold; /* Optional: make it bold */
+    white-space: nowrap; /* Prevent breaking into multiple lines */
+    flex-grow: 1; /* Allow logo to take up available space */
+}
+
+/* Adjust the span inside the logo */
+.logo span {
+    color: rgb(211, 3, 3);
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+}
+
+/* Make sure the toggle-container is on the right */
+.toggle-container {
+    padding-right: 25px;
+    display: flex;
+    justify-content: flex-end; /* Align the toggle to the right */
+    align-items: center; /* Vertically center the icon */
+    flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+/* Adjust the moon icon size */
+#theme-toggle-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer; /* Make it clickable */
+    transition: transform 0.3s ease; /* Add smooth animation for hover or click */
+}
+
+/* Optional: Add hover effect for toggle icon */
+#theme-toggle-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon when hovered */
+}
+
+.hamburg,
+.cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    display: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.nav-container .links {
+    display: flex;
+    margin-left: 20px; /* Added padding to prevent it from sticking */
+}
+
+.nav-container .links a {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px; /* Adjusted margin */
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+    white-space: nowrap; /* Prevents word break */
+}
+
+.nav-container .links a:hover {
+    color: rgb(211, 3, 3);
+    border-bottom: 2px solid rgb(211, 3, 3);
+}
+
+/* Dropdown Menu for Mobile */
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 15px 0;
+    margin: 10px 0; /* Vertical spacing */
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+    background-color: rgb(211, 3, 3);
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Button enhancements */
+button {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgb(211, 3, 3);
+}
+
+section {
+    width: 100%;
+    min-height: 90vh; /* Ensures each section takes at least 90% of the viewport height */
+    color: white;
+    padding: 20px; /* Section padding */
+    margin: 0; /* Removed margin to prevent shifting */
+}
+
+/* Separation lines */
+section::after {
+    content: "";
+    display: block;
+    width: 100%; /* Full width */
+    height: 1px;
+    margin: 20px 0; /* Vertical spacing */
+    background: rgba(255, 255, 255, 0.1); /* Smooth separation effect */
+}
+
+.main-container {
+    width: 100%;
+    min-height: 100%; /* Flexibility */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 40px; /* Increased padding for spacing */
+}
+
+.main-container .content {
+    color: white;
+    width: 40%;
+    min-height: 100px;
+    margin: 20px;
+}
+
+.content h1 {
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+
+.content h1 span {
+    font-weight: 700;
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+    color: rgb(211, 3, 3);
+}
+
+.content .typewriter {
+    font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+    font-weight: 700;
+}
+
+.typewriter span {
+    color: rgb(211, 3, 3);
+    text-shadow: 0 0 10px rgb(211, 3, 3);
+}
+
+.content p {
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+
+.social-links i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid rgb(211, 3, 3);
+    border-radius: 50%;
+    color: rgb(211, 3, 3);
+    margin: 0 15px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+
+.social-links i:hover {
+    scale: 1.3;
+    filter: drop-shadow(0 0 10px rgb(211, 3, 3));
+    color: black;
+    background-color: rgb(211, 3, 3);
+}
+
+.content button {
+    width: 50%;
+    height: 6vh;
+    margin: 30px;
+    background-color: rgb(211, 3, 3);
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+
+.content button:hover {
+    scale: 1.1;
+    color: rgb(211, 3, 3);
+    border: 2px solid rgb(211, 3, 3);
+    background-color: transparent;
+    font-weight: 700;
+    box-shadow: 0 0 40px 5px rgb(211, 3, 3);
+}
+
+.main-container .image {
+    width: 490px; 
+    height: 490px; 
+    border-radius: 50%; 
+    overflow: hidden;
+    box-shadow: 0 0 50px rgb(211, 3, 3);
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    transition: transform 0.3s ease; 
+    animation: move-up-down 2s infinite alternate; /* Animation added */
+}
+
+/* Profile image styling */
+.main-container .image img {
+    object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+    width: 100%;
+    height: 100%;
+}
+
+/* Animation for up and down movement */
+@keyframes move-up-down {
+    0% {
+        transform: translateY(0); /* Start position */
+    }
+    100% {
+        transform: translateY(20px); /* Move 20px down */
+    }
+}
+
+/* Hamburger menu for mobile */
+@media screen and (max-width: 768px) {
+    .nav-container .links {
+        display: none;
+    }
+
+    .hamburg {
+        display: block;
+    }
+
+    .dropdown {
+        display: block;
+        position: absolute;
+        top: 10vh; /* Adjusted for visibility */
+        right: 0;
+        width: 100%;
+    }
+   
+    /* Cancel button in the dropdown */
+    .cancel {
+        display: block;
+        font-size: 2rem; /* Size for the cancel button */
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        cursor: pointer;
+    }
+}
+
+/* About Me Section */
+.about-content {
+    display: flex;
+    justify-content: flex-start; /* Align the content to the left */
+    align-items: center;
+    padding: 20px;
+}
+
+.about-text {
+    font-size: 2rem;
+    color: red;
+    text-shadow: 0 0 10px rgba(211, 3, 3, 0.8);
+    line-height: 1.8;
+    margin-top: 20px;
+    max-width: 80%;
+    margin-left: 20px;  /* Move text closer to the image */
+    padding-right: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: normal;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-align: left; /* Align paragraph text to the left */
+}
+
+.about-image {
+    width: 45%;
+    height: auto;
+    filter: drop-shadow(5px 5px 5px red);
+    margin-right: 20px; /* Adjust margin to give space between the image and text */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+    /* Projects Section */
+    .about-text {
+        font-size: 2rem;
+    }
+
+    .about-image {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+    
+/* Projects Section */
+#Projects {
+    padding: 100px 20px; /* Increased padding to avoid nav bar overlap */
+    color: white;
+    text-align: center; /* Center the text */
+}
+
+.projects-heading {
+    font-size: 2.5rem;
+    color: rgb(211, 3, 3); /* Red color */
+    text-shadow: 0 0 10px rgb(211, 3, 3); /* Glowing effect */
+    margin-bottom: 40px; /* Space below heading */
+}
+
+.category-container {
+    margin-bottom: 60px; /* Space between categories */
+}
+
+.category-title {
+    font-size: 2rem;
+    color: rgb(211, 3, 3); /* Red color */
+    text-shadow: 0 0 10px rgb(211, 3, 3); /* Glowing effect */
+    margin: 20px 0; /* Space around category title */
+}
+
+.project-container {
+    display: flex;
+    justify-content: center; /* Center the cards */
+    gap: 20px; /* Space between cards */
+}
+
+.card {
+    perspective: 1000px; /* Enable 3D perspective */
+    width: 200px;
+    height: 300px;
+    cursor: pointer; /* Show pointer cursor for clickable effect */
+    transition: box-shadow 0.3s ease; /* Smooth transition for glow effect */
   }
   
-  /* Body Styling */
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f5f5f5; /* Neutral background */
-    color: #333;
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s; /* Smooth flip transition */
+    transform-style: preserve-3d;
   }
   
-  /* Header and Navigation */
-  header {
-    background: #222;
-    color: #fff;
-    padding: 10px 0;
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   }
   
-  nav ul {
+  .card-front {
+    background-color: #333;
     display: flex;
     justify-content: center;
-    list-style: none;
+    align-items: center;
+    color: rgb(211, 3, 3); /* Red color */
+    text-shadow: 0 0 10px rgb(211, 3, 3); /* Glowing effect */
+    overflow: hidden;
   }
   
-  nav ul li {
+  .card-image {
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 20px 5px rgba(211, 3, 3, 0.8); /* Red glow around the card */
+  }
+  
+  .card:hover .card-image {
+    transform: scale(1.2); /* Zoom the image on hover */
+  }
+  
+  .card-back {
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+
+/* Optional: Add styles for flipping animation */
+.card.clicked .card-inner {
+  transform: rotateY(180deg); /* Flip the card when clicked */
+}
+
+#Contacts {
+    padding: 50px 0;
+}
+
+/* Contact Heading - Red Glow (Adapted for Light and Dark Themes) */
+#Contacts h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(211, 3, 3); /* Red color */
+    text-shadow: 0 0 10px rgb(211, 3, 3); /* Glowing effect */
+    margin-bottom: 40px; /* Space below heading */
+}
+
+/* Contact Paragraph (Adapted for Light Theme) */
+#Contacts p {
+    text-align: center;
+    color: #333; /* Dark text color */
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+}
+
+#Contacts p a {
+    color: #333; /* Dark color */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#Contacts p a:hover {
+    color: #f51212; /* Light red when hovered */
+}
+
+/* Social Media Icons (Adapted for Light Theme) */
+.social-media-icons a {
+    font-size: 2.5rem; /* Larger icons */
+    color: #333; /* Dark color for icons */
     margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.social-media-icons a:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    color: #f51212; /* Red color on hover */
+}
+
+/* Form Container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form Styling with Glass Effect (Adapted for Both Themes) */
+form {
+    background: rgba(0, 0, 0, 0); /* Dark background for dark theme */
+    backdrop-filter: blur(10px); /* Glass blur */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for dark theme */
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.963); /* Slight shadow */
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Adapt Form for Light Theme with Lighter Background */
+@media (prefers-color-scheme: light) {
+    form {
+        background: rgba(255, 255, 255, 0.8); /* Lighter background for light theme */
+        border: 3px solid rgba(0, 0, 0, 0.2); /* Darker border for light theme */
+        color: rgb(211, 3, 3); /* Red text color */
+    }
+
+    .social-media-icons a {
+        color: #333; /* Dark color for icons */
+    }
+}
+
+/* Form Inputs and Textarea */
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1); /* Darker input background for dark theme */
+    color: #858585; /* Dark text for inputs */
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Input Focus Neon Glow Effect (Both Themes) */
+form input:focus, form textarea:focus {
+    box-shadow: 0 0 15px 5px rgba(211, 3, 3, 0.8); /* Red neon glow */
+}
+
+/* Submit Button - Red with Glow (Adapted for Light and Dark Themes) */
+form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #f51212; /* Red background */
+    border: 2px solid #f51212; /* Matching border */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(211, 3, 3, 0.5); /* Initial soft glow */
+}
+
+/* Submit Button Hover (Both Themes) */
+form button:hover {
+    scale: 1.1; 
+    color: rgb(211, 3, 3); 
+    border: 2px solid rgb(211, 3, 3);
+    background-color: transparent; /* Transparent background on hover */
+    font-weight: 700; /* Bold text on hover */
+    box-shadow: 0 0 40px 5px rgb(211, 3, 3); /* Strong red glow on hover */
+}
+
+/* AOS Hover Animations for Inputs */
+form input:hover,
+form textarea:hover {
+    background-color: rgba(0, 0, 0, 0.174); /* Highlight on hover */
+}
+/* Label Styling (Red Color) */
+form label {
+    color: rgb(211, 3, 3); 
+    font-size: 1rem; 
+    font-weight: bold;
+    margin-bottom: 5px; 
+    display: block; 
+}
+
+
+/* Footer Styling (Adapted for Both Themes) */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+footer a {
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f51212; /* Red color on hover */
+}
+
+/* Notification Styling */
+.notification {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #9b0404d2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
   }
   
-  nav ul li a:hover {
-    color: #ff6347; /* Hint of orange */
+  .notification.show {
+    display: block;
+    opacity: 1;
   }
   
-  /* Sections */
-  section {
-    padding: 20px;
-    max-width: 900px;
-    margin: 20px auto;
+  .notification-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  #about, #projects, #contact {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
   }
   
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 10px;
-    background: #222;
-    color: #fff;
+  .close-btn:hover {
+    color: #ddd;
   }
-  
