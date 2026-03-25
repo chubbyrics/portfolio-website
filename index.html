@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Rica Mae Rapatan, a Creative Web Developer specializing in next-gen web interfaces.">
+    <meta name="author" content="Rica Mae Rapatan">
+    
+    <meta property="og:title" content="Rica Mae Rapatan | Future-Ready Web Developer">
+    <meta property="og:description" content="Building immersive web experiences with React, Node.js, and Three.js.">
+    <meta property="og:image" content="assets/og-image.jpg">
+    
+    <title>Rica Mae Rapatan | Creative Developer</title>
+
+    <link rel="icon" type="image/png" href="assets/portfolio_logo.png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="canvas-container" aria-hidden="true"></div>
+
+    <header id="navbar">
+        <nav class="nav-container">
+            <a href="#home" class="logo" aria-label="Rica Mae Rapatan Home" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+    
+                <img src="assets/portfolio_logo.png" alt="Rica Logo Mark" style="height: 35px; width: auto; object-fit: contain;">
+                
+                <span style="font-family: monospace; font-size: 1.6rem; letter-spacing: -1px; margin-top: 4px;">
+                    <span style="color: #fff;">Rica Mae</span><span class="accent"> Rapatan</span>
+                </span>
+                
+            </a>
+    
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li> <li><a href="#projects" class="nav-link">Work</a></li>
+                <li><a href="#playground" class="nav-link">Oracle</a></li> <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+    
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                
+                <button id="menu-toggle" class="icon-btn mobile-only" aria-label="Open Menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </nav>
+    
+        <div id="mobile-menu" aria-hidden="true">
+            <nav class="mobile-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a> <a href="#projects">Work</a>
+                <a href="#playground">Oracle</a> <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-up">
+                    <span class="greeting-pill">Available for Full-Time & Freelance</span>
+                    <h1>Building Scalable <span class="text-gradient">Digital Solutions</span></h1>
+                    
+                    <div class="dynamic-text-wrapper" aria-label="I am a Developer and Designer">
+                        <span class="static-text">I am a</span>
+                        <span class="typewriter-text"></span>
+                        <span class="cursor">|</span>
+                    </div>
+    
+                    <p class="hero-bio">
+                        You need a developer who doesn't just write code, but actively solves problems. I build intuitive frontends, robust full-stack systems, and engaging mobile apps so your team can ship faster without the bottlenecks.
+                    </p>
+    
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View My Projects</a>
+                        <div class="social-row">
+                            <a href="https://github.com/chubbyrics" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/rica-mae-rapatan-9153ab246/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="hero-visual" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-3d-wrap">
+                        <div class="card-3d-wrapper">
+                            <div class="card-front">
+                                <div class="profile-card-glass">
+                                    <img src="assets/Profile.png" alt="Rica Mae Rapatan" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <div class="profile-card-glass stat-card">
+                                    <div class="card-header">
+                                        <h3>Player Stats</h3>
+                                        <span class="level-badge">SOFTWARE ENGINEER</span>
+                                    </div>
+                                    <div class="stats-grid">
+                                        <div class="stat-row"><span>Class</span><span class="stat-val">Full Stack</span></div>
+                                        <div class="stat-row"><span>Mana</span><span class="stat-val">Coffee ☕</span></div>
+                                        <div class="stat-row"><span>Logic</span><div class="stat-bar"><div class="fill" style="width: 85%"></div></div></div>
+                                        <div class="stat-row"><span>Creativity</span><div class="stat-bar"><div class="fill" style="width: 90%"></div></div></div>
+                                    </div>
+                                    <div class="card-footer"><p>"Creativity is intelligence having fun."</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div class="tech-marquee" aria-hidden="true">
+            <div class="track">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span>
+                <span>Node.js</span><span>Express.js</span><span>Laravel</span><span>PHP</span>
+                <span>Android</span><span>Kotlin</span><span>Java</span><span>Python</span>
+                <span>C</span><span>MySQL</span><span>SQLite</span><span>Firebase</span>
+                <span>Three.js</span><span>Godot</span><span>Figma</span><span>Photoshop</span>
+                
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span>
+                <span>Node.js</span><span>Express.js</span><span>Laravel</span><span>PHP</span>
+                <span>Android</span><span>Kotlin</span><span>Java</span><span>Python</span>
+                <span>C</span><span>MySQL</span><span>SQLite</span><span>Firebase</span>
+                <span>Three.js</span><span>Godot</span><span>Figma</span><span>Photoshop</span>
+            </div>
+        </div>
+    
+        <section id="services" class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>What I Do</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Struggling to translate complex business needs into seamless user experiences? I develop robust <strong>Full-Stack web applications</strong> that streamline your operations and scale with your users.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3>Mobile Apps</h3>
+                    <p>Need an app that doesn't just look good but performs flawlessly? I build intuitive, <strong>AI-integrated Android apps</strong> designed for speed, offline capabilities, and zero bottlenecks.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>UI/UX & Branding</h3>
+                    <p>Tired of clunky interfaces slowing down your users? I bridge the gap between design and development in <strong>Figma</strong>, ensuring every pixel serves a purpose and enhances the user journey.</p>
+                </div>
+            </div>
+        </section>
+    
+        <section id="about" class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>About Me <span style="font-size: 1.5rem; vertical-align: middle;"></span></h2>
+            </div>
+        
+            <div class="bento-grid">
+                <article class="bento-tile large" data-aos="fade-right">
+                    <h3>The Story So Far</h3>
+                    <p>
+                        Fast-paced development teams need adaptable problem-solvers who can jump in and contribute from day one. That’s exactly where I thrive. I focus on architecting scalable, real-world solutions that drive results—from full-scale <strong>Pharmacy Management Systems</strong> to <strong>AI-integrated Mobile Apps</strong>.
+                    </p>
+                    <p>
+                        Whether I'm delivering freelance projects for businesses, designing intuitive interfaces, or exploring <strong>Game Development in Godot</strong>, my goal is always the same: bridging the gap between complex logic and clean design to build tools that actually work. I'm ready to bring this versatility to your engineering team.
+                    </p>
+                </article>
+        
+                <div class="bento-tile media" data-aos="zoom-in">
+                    <img src="assets/Aboutme.png" alt="Workspace" loading="lazy">
+                </div>
+        
+                <div class="bento-tile small" data-aos="fade-up">
+                    <h3>Tech Arsenal</h3>
+                    <div class="tech-arsenal-wrapper">
+                        
+                        <div class="tech-category-card">
+                            <div class="tech-category-header">
+                                <i class="fa-solid fa-code"></i> Development
+                            </div>
+                            <div class="tech-grid">
+                                <div class="tech-item"><i class="fa-brands fa-laravel"></i> Laravel</div>
+                                <div class="tech-item"><i class="fa-brands fa-php"></i> PHP</div>
+                                <div class="tech-item"><i class="fa-brands fa-react"></i> React</div>
+                                <div class="tech-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+                                <div class="tech-item"><i class="fa-brands fa-java"></i> Java</div>
+                                <div class="tech-item"><i class="fa-solid fa-c"></i> C</div>
+                                <div class="tech-item"><i class="fa-brands fa-python"></i> Python</div>
+                            </div>
+                            </div> <div class="tech-category-card">
+                                <div class="tech-category-header">
+                                    <i class="fa-solid fa-mobile-screen"></i> Mobile & Sys
+                                </div>
+                                <div class="tech-grid">
+                                    <div class="tech-item"><i class="fa-brands fa-android"></i> Android</div>
+                                    <div class="tech-item"><i class="fa-brands fa-java"></i> Java/Kotlin</div>
+                                    <div class="tech-item"><i class="fa-solid fa-database"></i> SQLite</div>
+                                    <div class="tech-item"><i class="fa-solid fa-database"></i> MySQL</div>
+                                    <div class="tech-item"><i class="fa-solid fa-server"></i> MariaDB</div>
+                                    <div class="tech-item"><i class="fa-solid fa-fire"></i> Firebase</div>
+                                    <div class="tech-item"><i class="fa-solid fa-feather"></i> Flutter</div>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-category-card">
+                                <div class="tech-category-header">
+                                    <i class="fa-solid fa-pen-nib"></i> Creative
+                                </div>
+                                <div class="tech-grid">
+                                    <div class="tech-item"><i class="fa-brands fa-figma"></i> Figma</div>
+                                    <div class="tech-item"><i class="fa-solid fa-palette"></i> Photoshop</div>
+                                    <div class="tech-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Canva</div>
+                                    <div class="tech-item"><i class="fa-brands fa-wix"></i> Wix</div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="projects" class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Featured Works</h2>
+            </div>
+    
+            <div class="project-bento-grid">
+                
+                <article class="project-item featured" data-aos="fade-up">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Student Jobs</h3>
+                            <span class="project-type">Web Platform</span>
+                        </div>
+                        <p>Eliminated the friction of finding entry-level freelance work. Built a responsive platform that connects students to clients, demonstrating full-stack problem-solving from secure database architecture to a user-first UI.</p>
+                        <div class="tech-stack-pills">
+                            <span>React</span><span>Node.js</span><span>Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://chubbyrics.github.io/Student_Jobs/" target="_blank" class="link-text">View Live <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <img src="assets/studentjobs.png" alt="Student Jobs" loading="lazy">
+                    </div>
+                </article>
+    
+                <article class="project-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-content">
+                        <h3>Popstar Drug System</h3>
+                        <p>Streamlined manual pharmacy operations by engineering a comprehensive POS and inventory tracking system, reducing human error and saving administrative time.</p>
+                        <div class="tech-stack-pills"><span>Android Studio</span><span>MySQL</span><span>Java</span></div>
+                        <a href="https://github.com/chubbyrics/PopstarDrug" target="_blank" class="icon-link"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </article>
+    
+                <article class="project-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-content">
+                        <h3>Sign Language AI</h3>
+                        <p>Bridged communication gaps by integrating TensorFlow Lite into a mobile app, delivering real-time, on-device AI gesture translation without performance lag.</p>
+                        <div class="tech-stack-pills"><span>Android</span><span>Kotlin</span><span>AI/ML</span></div>
+                        <a href="https://github.com/chubbyrics/SignLanguageTranslator" target="_blank" class="icon-link"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </article>
+    
+                <article class="project-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-content">
+                        <h3>Bloom Animation</h3>
+                        <p>Showcased frontend finesse and performance optimization through interactive web art, proving that complex CSS animations can be both beautiful and lightweight.</p>
+                        <div class="tech-stack-pills"><span>CSS3</span><span>Creative</span></div>
+                        <a href="https://chubbyrics.github.io/flower-w-letter/" target="_blank" class="icon-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+    
+                <article class="project-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-content">
+                        <h3>Tic Tac Toe AI</h3>
+                        <p>Demonstrated advanced algorithmic problem-solving by implementing the Minimax algorithm, creating an unbeatable AI logic system optimized for speed.</p>
+                        <div class="tech-stack-pills"><span>Algorithm</span><span>JS</span></div>
+                        <a href="https://chubbyrics.github.io/tic-tac-toe/" target="_blank" class="icon-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+    
+                 <article class="project-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-content">
+                        <h3>Subway Surfers Play by Body Gestures</h3>
+                        <p>Re-engineered traditional gaming controls by integrating computer vision for pose detection, translating physical body gestures into real-time gameplay inputs.</p>
+                        <div class="tech-stack-pills"><span>Python</span><span>Computer Vision</span></div> <a href="https://github.com/chubbyrics/pose_detection_subway_surfers" target="_blank" class="icon-link"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </article>
+    
+            </div>
+        </section>
+    
+        <section id="journey" class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>My Journey</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2025 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Full-Stack Solutions Developer</h3>
+                            <p>Leading the development of a comprehensive Pharmacy Management System and architecting advanced, scalable web solutions for clients.</p>
+                        </div>
+                    </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h3>Freelance Era Begins</h3>
+                        <p>Started taking commissions for Web Development and Graphic Design (Logos/Branding).</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>Deep Dive into Mobile</h3>
+                        <p>Mastered Android Studio, Java, and SQLite. Built first functional mobile apps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="playground" class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>The Neural Oracle <span style="font-size: 1.5rem;"></span></h2>
+            </div>
+            
+            <div class="oracle-container" data-aos="zoom-in">
+                <div class="oracle-ui-top">
+                    <p>Ask Yes or No Questions</p>
+                    
+                    <div class="oracle-input-wrapper">
+                        <span class="prompt-char">></span>
+                        <input type="text" id="oracle-input" placeholder="Try asking: 'Should I hire you?" autocomplete="off">
+                    </div>
+                </div>
+                
+                <div id="oracle-canvas"></div>
+                
+                <div id="oracle-text" class="neon-text">AWAITING INPUT...</div>
+                
+                <div class="oracle-hint">Press [ENTER] or Click the Core</div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-container">
+            <div class="contact-wrapper glass-panel" data-aos="zoom-in">
+                <div class="contact-info">
+                    <h2>Let's Connect</h2>
+                    <p>Have a project in mind? Let's build something extraordinary.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                        <a href="mailto:rapatanricamae@gmail.com" class="email-display" style="margin-top: 0;">
+                            <i class="fa-solid fa-envelope"></i> rapatanricamae@gmail.com
+                        </a>
+                        
+                        <a href="tel:+63 916 1276 150" class="email-display" style="margin-top: 0;">
+                            <i class="fa-solid fa-phone"></i> +63 916 1276 150
+                        </a>
+        
+                        <a href="https://www.linkedin.com/in/rica-mae-rapatan-9153ab246/" target="_blank" rel="noopener noreferrer" class="email-display" style="margin-top: 0;">
+                            <i class="fa-brands fa-linkedin"></i> Rica Mae Rapatan
+                        </a>
+
+                        <a href="https://facebook.com/ricamae.rapatanii" target="_blank" rel="noopener noreferrer" class="email-display" style="margin-top: 0;">
+                            <i class="fa-brands fa-facebook"></i> Rica Mae Rapatan II
+                        </a>
+        
+                        <a href="https://instagram.com/aesricsthic_05" target="_blank" rel="noopener noreferrer" class="email-display" style="margin-top: 0;">
+                            <i class="fa-brands fa-instagram"></i> @aesricsthic_05
+                        </a>
+                    </div>
+                </div>
+    
+                <form id="contact-form" class="modern-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Send Message</button>
+                    <div id="form-feedback" class="toast"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Rica Mae Rapatan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js" defer></script>
+    <script>
+        AOS.init({ offset: 50, duration: 1000 });
+    </script>
+</body>
+</html>
