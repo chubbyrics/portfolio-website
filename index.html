@@ -3,416 +3,529 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Rica Mae Rapatan, a Creative Web Developer specializing in next-gen web interfaces.">
+    <meta name="description" content="Rica Mae Rapatan | Web & Mobile Developer portfolio. Turning ideas into clean, working apps.">
     <meta name="author" content="Rica Mae Rapatan">
+    <title>Rica Mae Rapatan — Web & Mobile Developer</title>
     
-    <meta property="og:title" content="Rica Mae Rapatan | Future-Ready Web Developer">
-    <meta property="og:description" content="Building immersive web experiences with React, Node.js, and Three.js.">
-    <meta property="og:image" content="assets/og-image.jpg">
-    
-    <title>Rica Mae Rapatan | Creative Developer</title>
-
     <link rel="icon" type="image/png" href="assets/portfolio_logo.png">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div id="canvas-container" aria-hidden="true"></div>
 
-    <header id="navbar">
-        <nav class="nav-container">
-            <a href="#home" class="logo" aria-label="Rica Mae Rapatan Home" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-    
-                <img src="assets/portfolio_logo.png" alt="Rica Logo Mark" style="height: 35px; width: auto; object-fit: contain;">
-                
-                <span style="font-family: monospace; font-size: 1.6rem; letter-spacing: -1px; margin-top: 4px;">
-                    <span style="color: #fff;">Rica Mae</span><span class="accent"> Rapatan</span>
-                </span>
-                
-            </a>
-    
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li> <li><a href="#projects" class="nav-link">Work</a></li>
-                <li><a href="#playground" class="nav-link">Oracle</a></li> <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-    
-            <div class="nav-actions">
-                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                
-                <button id="menu-toggle" class="icon-btn mobile-only" aria-label="Open Menu" aria-expanded="false">
-                    <i class="fa-solid fa-bars-staggered"></i>
-                </button>
-            </div>
+   <!-- LEFT SIDEBAR PANEL -->
+   <aside id="sidebar">
+    <div class="sidebar-top">
+        <div class="sidebar-brand">
+            <a href="#home" class="logo">Rica<span class="accent"> Mae</span></a>
+            <p class="sidebar-tag">Web & Mobile Developer</p>
+        </div>
+
+        <!-- NAVIGATION CORE LINKS -->
+        <nav class="sidebar-links">
+            <a href="#home" class="nav-link active" title="Home"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+            <a href="#services" class="nav-link" title="Services"><i class="fa-solid fa-handshake"></i> <span>Services</span></a>
+            <a href="#experience" class="nav-link" title="Experience"><i class="fa-solid fa-briefcase"></i> <span>Experience</span></a>
+            <a href="#projects" class="nav-link" title="Projects"><i class="fa-solid fa-laptop-code"></i> <span>Projects</span></a>
+            <a href="#arsenal" class="nav-link" title="Tech Stack"><i class="fa-solid fa-shield-halved"></i> <span>Tech Stack</span></a>
+            <a href="#credentials" class="nav-link" title="Credentials"><i class="fa-solid fa-graduation-cap"></i> <span>Credentials</span></a>
+            <a href="#contact" class="nav-link" title="Contact"><i class="fa-solid fa-paper-plane"></i> <span>Contact</span></a>
         </nav>
-    
-        <div id="mobile-menu" aria-hidden="true">
-            <nav class="mobile-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a> <a href="#projects">Work</a>
-                <a href="#playground">Oracle</a> <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+    </div>
 
-    <main>
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <div class="hero-text" data-aos="fade-up">
-                    <span class="greeting-pill">Available for Full-Time & Freelance</span>
-                    <h1>Building Scalable <span class="text-gradient">Digital Solutions</span></h1>
+    <!-- PERSISTENT SIDEBAR DECK INTERACTIVE HOVER BUTTON -->
+    <div class="sidebar-gear-shortcut">
+        <button id="tech-gear-btn" class="sidebar-gear-box-btn">
+            <div class="gear-preview-header">
+                <span><i class="fa-solid fa-gears"></i> SETUP COMPONENT</span>
+                <i class="fa-solid fa-arrow-right-long icon-arrow"></i>
+            </div>
+            <p class="gear-preview-text">Asus TUF Gaming F15 • Gears Deck</p>
+        </button>
+    </div>
+
+    <!-- INTERFACE DISPLAY SELECTION MATRIX -->
+    <div class="sidebar-footer-controls">
+        <div class="theme-icon-control">
+            <button class="theme-ico-btn" data-mode="system" data-hint="Auto System Mode">
+                <i class="fa-solid fa-desktop"></i>
+            </button>
+            <button class="theme-ico-btn" data-mode="light" data-hint="Light Interface">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+            <button class="theme-ico-btn active" data-mode="dark" data-hint="Dark Interface">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+        <a href="#contact" class="btn-consult-sidebar"><i class="fa-solid fa-bolt"></i> <span class="consult-text-span">Consultation</span></a>
+    </div>
+</aside>
+
+    <!-- FULL OVERLAY VERTICALLY DRAGGABLE GEARDRAWER PANEL -->
+    <div id="tech-panel" class="hidden-panel">
+        <div class="panel-header">
+            <h3><i class="fa-solid fa-laptop"></i> Workstation Equipment Deck</h3>
+            <div class="panel-window-controls">
+                <button id="maximize-gear" class="panel-ctrl-btn" title="Toggle Fullscreen View"><i class="fa-solid fa-expand"></i></button>
+                <button id="close-tech" class="close-btn">&times;</button>
+            </div>
+        </div>
+        
+        <p class="drag-instruction-hint">// Click/Hold and Drag anywhere on this panel to scroll items vertically</p>
+        
+        <div class="panel-content-draggable-scroll" id="gear-drag-zone">
+            <div class="gear-vertical-track" id="gear-vertical-track">
+                
+                <div class="gear-category-cluster">
+                    <h4>[01 / Computing Core]</h4>
+                    <div class="gear-flex-row">
+                        <div class="gear-card-item minimal-block-card">
+                            <div class="gear-img-wrap-half">
+                                <img src="https://static.onlineshop.cz/data/eshop_online/product/d/206/1026814/asus-tuf-gaming-f15-fx506-i5-10300h-15-6-fhd-8gb-512gb-ssd-gtx-1650-w11h-black-2r-fx506lhb-hn326w.jpg" alt="Asus TUF Gaming F15">
+                            </div>
+                            <div class="gear-card-body-half">
+                                <h5>Asus TUF Gaming F15</h5>
+                                <p class="gear-spec-dot-line">Intel i5 10th Gen • 512GB SSD • 16GB RAM • GTX 1650</p>
+                                <a href="https://www.asus.com/us/laptops/for-gaming/tuf-gaming/asus-tuf-gaming-f15/techspec/" target="_blank" class="btn-spec-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Specs</a>
+                            </div>
+                        </div>
+                        <div class="gear-card-item minimal-block-card">
+                            <div class="gear-img-wrap-half">
+                                <img src="https://th.bing.com/th/id/OIP.nbeTFJvJPL55sXcbS0KdIgHaHa?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Metal Laptop Stand">
+                            </div>
+                            <div class="gear-card-body-half">
+                                <h5>Metal Laptop Stand</h5>
+                                <p class="gear-spec-dot-line">Aluminum Alloy • Foldable Design • Anti-Slip Silicon Pads</p>
+                                <a href="https://shopee.ph/Universal-Metal-laptop-Stand-Portable-Hands-Free-Adjustable-Foldable-Laptop-Desk-Stand-p1-i.21159946.5763849152" target="_blank" class="btn-spec-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Product</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gear-category-cluster">
+                    <h4>[02 / Audio & Input Peripherals]</h4>
+                    <div class="gear-flex-row">
+                        <div class="gear-card-item minimal-block-card">
+                            <div class="gear-img-wrap-half">
+                                <img src="https://tse4.mm.bing.net/th/id/OIP.yH4_WR_Kvchi5ZPckQFr9AHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Attack Shark X11 SE">
+                            </div>
+                            <div class="gear-card-body-half">
+                                <h5>Attack Shark X11 SE</h5>
+                                <p class="gear-spec-dot-line">PixArt Sensor • Three-Mode Wireless • 49g Ultra-Lightweight</p>
+                                <a href="https://attackshark.com.ph/products/attack-shark-x11se-wireless-gaming-mouse?shpxid=2f99ff3e-e456-4878-aa17-47ae6528550f" target="_blank" class="btn-spec-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Specs</a>
+                            </div>
+                        </div>
+                        <div class="gear-card-item minimal-block-card">
+                            <div class="gear-img-wrap-half">
+                                <img src="https://th.bing.com/th/id/R.277cce450b8df5e5a826729cb9cda23b?rik=a%2bkPp9UsQjNczw&riu=http%3a%2f%2fmobspares.com%2fcdn%2fshop%2ffiles%2fTBD0572262601F.jpg%3fv%3d1741293279&ehk=1ZoTCLDC2mLZbREFbeMSycqZeuohT%2bIDR0Ogd%2fg4mas%3d&risl=&pid=ImgRaw&r=0" alt="QKZ AK6 Earphones">
+                            </div>
+                            <div class="gear-card-body-half">
+                                <h5>QKZ AK6</h5>
+                                <p class="gear-spec-dot-line">1DD Dynamic Driver • Copper Cavity • Built-in HD Mic • Hi-Fi Audio</p>
+                                <a href="https://shopee.ph/Qkz-Ak6-Pro-AK6-1dd-Dynamic-Wire-Earphones-Hi-Fi-Earbuds-In-Ear-Monitor-with-Mic-Removable-Cable-i.25597897.10042002424" target="_blank" class="btn-spec-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Specs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gear-category-cluster">
+                    <h4>[03 / Handheld Ecosystem]</h4>
+                    <div class="gear-flex-row">
+                        <div class="gear-card-item minimal-block-card">
+                            <div class="gear-img-wrap-half">
+                                <img src="https://img-prd-pim.poorvika.com/product/Redmi-note-14-pro-plus-5g-spectre-blue-256gb-8gb-ram-Front-Back-View.png" alt="Xiaomi Redmi Note 14 Pro Plus 5G">
+                            </div>
+                            <div class="gear-card-body-half">
+                                <h5>Redmi Note 14 Pro+ 5G</h5>
+                                <p class="gear-spec-dot-line">Snapdragon Processor • 5G Pipeline Ready • AMOLED Screen</p>
+                                <a href="https://www.mi.com/global/product/redmi-note-14-pro-plus-5g/specs/" target="_blank" class="btn-spec-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Specs</a>
+                            </div>
+                        </div>
+                        <div class="gear-card-item minimal-block-card">
+                            <div class="gear-img-wrap-half">
+                                <img src="https://www.mobiledokan.com/media/xiaomi-redmi-watch-5-lite-black-imagewebp.webp" alt="Xiaomi Redmi Watch 5 Lite">
+                            </div>
+                            <div class="gear-card-body-half">
+                                <h5>Redmi Watch 5 Lite</h5>
+                                <p class="gear-spec-dot-line">1.96" AMOLED • Built-in GNSS • 5ATM Water Resistance</p>
+                                <a href="https://www.mi.com/global/product/redmi-watch-5-lite/" target="_blank" class="btn-spec-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Specs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- GENERAL SLIDE OVERLAY EXPANSION SYSTEM -->
+    <div id="archive-overlay" class="archive-panel-drawer">
+        <div class="archive-panel-header">
+            <h3 id="archive-title">Archive View</h3>
+            <button id="close-archive" class="close-btn">&times;</button>
+        </div>
+        <div id="archive-inject-content" class="archive-panel-body"></div>
+    </div>
+
+    <!-- MAIN INTERFACE WORKSPACE -->
+    <main id="workspace">
+
+        <!-- PERSISTENT TOP METRICS BAR -->
+        <header id="workspace-top-bar">
+            <div class="top-bar-left">
+                <span class="system-node-id"><i class="fa-solid fa-circle-nodes"></i> r-system_active_v1.0.5</span>
+                <span class="system-status-pouch"><span class="pulse-dot-green"></span> Core Pipeline Synchronized</span>
+            </div>
+            <div class="top-bar-right">
+                <span class="top-bar-meta-item"><i class="fa-solid fa-globe"></i> BOHOL // PHILIPPINES</span>
+                <span class="top-bar-meta-item"><i class="fa-solid fa-clock"></i> <span id="live-pht-clock">00:00:00 PHT</span></span>
+            </div>
+        </header>
+
+        <!-- ARSENAL SECTION ARCHITECTURE -->
+        <section id="arsenal" class="hero-section bryl-minimal-canvas main-section-block" style="display: none;">
+            <div class="arsenal-page-wrapper">
+                <header class="arsenal-page-header">
+                    <span class="bryl-mono-label">// DEDICATED PIPELINE // INFRASTRUCTURE MATRIX</span>
+                    <h2 class="bryl-pixel-header">Tech Stack</h2>
+                    <p class="bryl-display-sub">The tools, frameworks, and platforms I reach for — across the front end, back end, infrastructure, and AI.</p>
+                </header>
+
+                <!-- GRID SYSTEM ARCHITECTURE -->
+                <div class="arsenal-matrix-grid">
+                    <div class="arsenal-matrix-card">
+                        <span class="bryl-mono-label">[01 / FRONTEND_ENGINES]</span>
+                        <div class="badge-row">
+                            <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,vue,tailwind,sass,vite,webpack&theme=dark" alt="Frontend Stacks" />
+                        </div>
+                        <ul class="text-stack-list">
+                            <li>JavaScript, TypeScript, React, Next.js, Vue.js</li>
+                            <li>Tailwind CSS, SCSS, Styled Components, Vite, Webpack, ESLint, Prettier</li>
+                        </ul>
+                    </div>
+
+                    <div class="arsenal-matrix-card">
+                        <span class="bryl-mono-label">[02 / BACKEND_&_DATA]</span>
+                        <div class="badge-row">
+                            <img src="https://skillicons.dev/icons?i=nodejs,express,python,java,php,laravel,postgres,mysql,mongodb&theme=dark" alt="Backend Stacks" />
+                        </div>
+                        <ul class="text-stack-list">
+                            <li>Node.js, Express.js, NestJS, Python, FastAPI, Java, Spring Boot, PHP, Laravel</li>
+                            <li>PostgreSQL, MySQL, MongoDB, DynamoDB, SQLite</li>
+                            <li>OAuth, JWT, LDAP, REST, GraphQL, gRPC</li>
+                        </ul>
+                    </div>
+
+                    <div class="arsenal-matrix-card">
+                        <span class="bryl-mono-label">[03 / AI_&_MACHINE_LEARNING]</span>
+                        <div class="badge-row">
+                            <img src="https://skillicons.dev/icons?i=tensorflow,pytorch,openai&theme=dark" alt="AI Stacks" />
+                        </div>
+                        <ul class="text-stack-list">
+                            <li>TensorFlow, PyTorch, LangChain, Transformers (Hugging Face)</li>
+                            <li>OpenAI API, Anthropic Claude Code, Mistral, LlamaIndex, AutoGPT</li>
+                        </ul>
+                    </div>
+
+                    <div class="arsenal-matrix-card">
+                        <span class="bryl-mono-label">[04 / DEVOPS_&_AUTOMATION]</span>
+                        <div class="badge-row">
+                            <img src="https://skillicons.dev/icons?i=aws,gcp,githubactions,docker,kubernetes,github&theme=dark" alt="DevOps Stacks" />
+                        </div>
+                        <ul class="text-stack-list">
+                            <li>AWS (Lambda, IAM, Cognito), Google Cloud Platform (GCP), Azure, Firebase, Google Apps Script</li>
+                            <li>Docker, Kubernetes, GitHub Actions, Jenkins, GitLab CI, Terraform</li>
+                            <li>n8n, Prometheus, Grafana, Datadog</li>
+                        </ul>
+                    </div>
+
+                    <div class="arsenal-matrix-card">
+                        <span class="bryl-mono-label">[05 / WORKSPACE_&_CHANNELS]</span>
+                        <div class="badge-row">
+                            <img src="https://skillicons.dev/icons?i=git,vscode,figma,ps,ai,xd,discord,svg&theme=dark" alt="Workspace Tools" />
+                        </div>
+                        <ul class="text-stack-list">
+                            <li>Git, GitHub, GitLab, Bitbucket, VS Code, JetBrains (IntelliJ, PyCharm)</li>
+                            <li>Discord, WhatsApp, Viber, Slack, Teams, JIRA, Trello, ClickUp</li>
+                            <li>Figma, Photoshop, Illustrator, Adobe XD, Canva, Excel</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- HOME SECTION -->
+        <section id="home" class="hero-section bryl-minimal-canvas main-section-block">
+            <div class="hero-grid-split">
+                <div class="hero-text-block">
+                    <span class="bryl-mono-label">// STATUS: ACTIVE_PIPELINE // OPEN_FOR_BOOKINGS</span>
+                    <h1 class="bryl-pixel-header">RICA MAE RAPATAN</h1>
                     
-                    <div class="dynamic-text-wrapper" aria-label="I am a Developer and Designer">
-                        <span class="static-text">I am a</span>
-                        <span class="typewriter-text"></span>
-                        <span class="cursor">|</span>
-                    </div>
-    
-                    <p class="hero-bio">
-                        You need a developer who doesn't just write code, but actively solves problems. I build intuitive frontends, robust full-stack systems, and engaging mobile apps so your team can ship faster without the bottlenecks.
+                    <p class="bryl-display-sub">
+                        I'M A FULL-STACK ENGINEER. I BUILD MODERN WEB & MOBILE APPS, AND THESE DAYS I'M FOCUSED ON GENERATIVE AI.
                     </p>
-    
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary">View My Projects</a>
-                        <div class="social-row">
-                            <a href="https://github.com/chubbyrics" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/rica-mae-rapatan-9153ab246/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="hero-visual" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="card-3d-wrap">
-                        <div class="card-3d-wrapper">
-                            <div class="card-front">
-                                <div class="profile-card-glass">
-                                    <img src="assets/Profile.png" alt="Rica Mae Rapatan" loading="lazy">
-                                </div>
-                            </div>
-                            <div class="card-back">
-                                <div class="profile-card-glass stat-card">
-                                    <div class="card-header">
-                                        <h3>Player Stats</h3>
-                                        <span class="level-badge">SOFTWARE ENGINEER</span>
-                                    </div>
-                                    <div class="stats-grid">
-                                        <div class="stat-row"><span>Class</span><span class="stat-val">Full Stack</span></div>
-                                        <div class="stat-row"><span>Mana</span><span class="stat-val">Coffee ☕</span></div>
-                                        <div class="stat-row"><span>Logic</span><div class="stat-bar"><div class="fill" style="width: 85%"></div></div></div>
-                                        <div class="stat-row"><span>Creativity</span><div class="stat-bar"><div class="fill" style="width: 90%"></div></div></div>
-                                    </div>
-                                    <div class="card-footer"><p>"Creativity is intelligence having fun."</p></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <div class="tech-marquee" aria-hidden="true">
-            <div class="track">
-                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span>
-                <span>Node.js</span><span>Express.js</span><span>Laravel</span><span>PHP</span>
-                <span>Android</span><span>Kotlin</span><span>Java</span><span>Python</span>
-                <span>C</span><span>MySQL</span><span>SQLite</span><span>Firebase</span>
-                <span>Three.js</span><span>Godot</span><span>Figma</span><span>Photoshop</span>
-                
-                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span>
-                <span>Node.js</span><span>Express.js</span><span>Laravel</span><span>PHP</span>
-                <span>Android</span><span>Kotlin</span><span>Java</span><span>Python</span>
-                <span>C</span><span>MySQL</span><span>SQLite</span><span>Firebase</span>
-                <span>Three.js</span><span>Godot</span><span>Figma</span><span>Photoshop</span>
-            </div>
-        </div>
-    
-        <section id="services" class="section-container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>What I Do</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card" data-aos="fade-up">
-                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p>Struggling to translate complex business needs into seamless user experiences? I develop robust <strong>Full-Stack web applications</strong> that streamline your operations and scale with your users.</p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-                    <h3>Mobile Apps</h3>
-                    <p>Need an app that doesn't just look good but performs flawlessly? I build intuitive, <strong>AI-integrated Android apps</strong> designed for speed, offline capabilities, and zero bottlenecks.</p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
-                    <h3>UI/UX & Branding</h3>
-                    <p>Tired of clunky interfaces slowing down your users? I bridge the gap between design and development in <strong>Figma</strong>, ensuring every pixel serves a purpose and enhances the user journey.</p>
-                </div>
-            </div>
-        </section>
-    
-        <section id="about" class="section-container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>About Me <span style="font-size: 1.5rem; vertical-align: middle;"></span></h2>
-            </div>
-        
-            <div class="bento-grid">
-                <article class="bento-tile large" data-aos="fade-right">
-                    <h3>The Story So Far</h3>
-                    <p>
-                        Fast-paced development teams need adaptable problem-solvers who can jump in and contribute from day one. That’s exactly where I thrive. I focus on architecting scalable, real-world solutions that drive results—from full-scale <strong>Pharmacy Management Systems</strong> to <strong>AI-integrated Mobile Apps</strong>.
+                    
+                    <p class="bryl-body-narrative">
+                        Right now I'm building cool new stuff every day. I love turning rough ideas into things people actually use.
                     </p>
-                    <p>
-                        Whether I'm delivering freelance projects for businesses, designing intuitive interfaces, or exploring <strong>Game Development in Godot</strong>, my goal is always the same: bridging the gap between complex logic and clean design to build tools that actually work. I'm ready to bring this versatility to your engineering team.
-                    </p>
-                </article>
-        
-                <div class="bento-tile media" data-aos="zoom-in">
-                    <img src="assets/Aboutme.png" alt="Workspace" loading="lazy">
-                </div>
-        
-                <div class="bento-tile small" data-aos="fade-up">
-                    <h3>Tech Arsenal</h3>
-                    <div class="tech-arsenal-wrapper">
-                        
-                        <div class="tech-category-card">
-                            <div class="tech-category-header">
-                                <i class="fa-solid fa-code"></i> Development
-                            </div>
-                            <div class="tech-grid">
-                                <div class="tech-item"><i class="fa-brands fa-laravel"></i> Laravel</div>
-                                <div class="tech-item"><i class="fa-brands fa-php"></i> PHP</div>
-                                <div class="tech-item"><i class="fa-brands fa-react"></i> React</div>
-                                <div class="tech-item"><i class="fa-brands fa-js"></i> JavaScript</div>
-                                <div class="tech-item"><i class="fa-brands fa-java"></i> Java</div>
-                                <div class="tech-item"><i class="fa-solid fa-c"></i> C</div>
-                                <div class="tech-item"><i class="fa-brands fa-python"></i> Python</div>
-                            </div>
-                            </div> <div class="tech-category-card">
-                                <div class="tech-category-header">
-                                    <i class="fa-solid fa-mobile-screen"></i> Mobile & Sys
-                                </div>
-                                <div class="tech-grid">
-                                    <div class="tech-item"><i class="fa-brands fa-android"></i> Android</div>
-                                    <div class="tech-item"><i class="fa-brands fa-java"></i> Java/Kotlin</div>
-                                    <div class="tech-item"><i class="fa-solid fa-database"></i> SQLite</div>
-                                    <div class="tech-item"><i class="fa-solid fa-database"></i> MySQL</div>
-                                    <div class="tech-item"><i class="fa-solid fa-server"></i> MariaDB</div>
-                                    <div class="tech-item"><i class="fa-solid fa-fire"></i> Firebase</div>
-                                    <div class="tech-item"><i class="fa-solid fa-feather"></i> Flutter</div>
-                                </div>
-                            </div>
-                            
-                            <div class="tech-category-card">
-                                <div class="tech-category-header">
-                                    <i class="fa-solid fa-pen-nib"></i> Creative
-                                </div>
-                                <div class="tech-grid">
-                                    <div class="tech-item"><i class="fa-brands fa-figma"></i> Figma</div>
-                                    <div class="tech-item"><i class="fa-solid fa-palette"></i> Photoshop</div>
-                                    <div class="tech-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Canva</div>
-                                    <div class="tech-item"><i class="fa-brands fa-wix"></i> Wix</div>
-                                </div>
-                            </div>
+                    
+                    <div class="hero-actions bryl-action-gap">
+                        <a href="#projects" class="btn bryl-sharp-btn bryl-btn-dark">SEE MY WORK</a>
+                        <a href="#contact" class="btn bryl-sharp-btn bryl-btn-accent">BOOK FREE CONSULTATION</a>
                     </div>
                 </div>
-            </div>
-        </section>
-    
-        <section id="projects" class="section-container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Featured Works</h2>
-            </div>
-    
-            <div class="project-bento-grid">
-                
-                <article class="project-item featured" data-aos="fade-up">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3>Student Jobs</h3>
-                            <span class="project-type">Web Platform</span>
-                        </div>
-                        <p>Eliminated the friction of finding entry-level freelance work. Built a responsive platform that connects students to clients, demonstrating full-stack problem-solving from secure database architecture to a user-first UI.</p>
-                        <div class="tech-stack-pills">
-                            <span>React</span><span>Node.js</span><span>Firebase</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://chubbyrics.github.io/Student_Jobs/" target="_blank" class="link-text">View Live <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-visual">
-                        <img src="assets/studentjobs.png" alt="Student Jobs" loading="lazy">
-                    </div>
-                </article>
-    
-                <article class="project-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-content">
-                        <h3>Popstar Drug System</h3>
-                        <p>Streamlined manual pharmacy operations by engineering a comprehensive POS and inventory tracking system, reducing human error and saving administrative time.</p>
-                        <div class="tech-stack-pills"><span>Android Studio</span><span>MySQL</span><span>Java</span></div>
-                        <a href="https://github.com/chubbyrics/PopstarDrug" target="_blank" class="icon-link"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                </article>
-    
-                <article class="project-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-content">
-                        <h3>Sign Language AI</h3>
-                        <p>Bridged communication gaps by integrating TensorFlow Lite into a mobile app, delivering real-time, on-device AI gesture translation without performance lag.</p>
-                        <div class="tech-stack-pills"><span>Android</span><span>Kotlin</span><span>AI/ML</span></div>
-                        <a href="https://github.com/chubbyrics/SignLanguageTranslator" target="_blank" class="icon-link"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                </article>
-    
-                <article class="project-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-content">
-                        <h3>Bloom Animation</h3>
-                        <p>Showcased frontend finesse and performance optimization through interactive web art, proving that complex CSS animations can be both beautiful and lightweight.</p>
-                        <div class="tech-stack-pills"><span>CSS3</span><span>Creative</span></div>
-                        <a href="https://chubbyrics.github.io/flower-w-letter/" target="_blank" class="icon-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </article>
-    
-                <article class="project-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="project-content">
-                        <h3>Tic Tac Toe AI</h3>
-                        <p>Demonstrated advanced algorithmic problem-solving by implementing the Minimax algorithm, creating an unbeatable AI logic system optimized for speed.</p>
-                        <div class="tech-stack-pills"><span>Algorithm</span><span>JS</span></div>
-                        <a href="https://chubbyrics.github.io/tic-tac-toe/" target="_blank" class="icon-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </article>
-    
-                 <article class="project-item" data-aos="fade-up" data-aos-delay="500">
-                    <div class="project-content">
-                        <h3>Subway Surfers Play by Body Gestures</h3>
-                        <p>Re-engineered traditional gaming controls by integrating computer vision for pose detection, translating physical body gestures into real-time gameplay inputs.</p>
-                        <div class="tech-stack-pills"><span>Python</span><span>Computer Vision</span></div> <a href="https://github.com/chubbyrics/pose_detection_subway_surfers" target="_blank" class="icon-link"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                </article>
-    
-            </div>
-        </section>
-    
-        <section id="journey" class="section-container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>My Journey</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline">
-                    <div class="timeline-item" data-aos="fade-left">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2025 - Present</div>
-                        <div class="timeline-content">
-                            <h3>Full-Stack Solutions Developer</h3>
-                            <p>Leading the development of a comprehensive Pharmacy Management System and architecting advanced, scalable web solutions for clients.</p>
-                        </div>
-                    </div>
-                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024</div>
-                    <div class="timeline-content">
-                        <h3>Freelance Era Begins</h3>
-                        <p>Started taking commissions for Web Development and Graphic Design (Logos/Branding).</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2023</div>
-                    <div class="timeline-content">
-                        <h3>Deep Dive into Mobile</h3>
-                        <p>Mastered Android Studio, Java, and SQLite. Built first functional mobile apps.</p>
+                <div class="hero-profile-container">
+                    <div class="bryl-static-frame">
+                        <img src="assets/profile_darkmode.png" alt="Rica Mae Rapatan" class="profile-img-fluid bryl-monochrome-filter hero-img-dark">
+                        <img src="assets/profile_lightmode.png" alt="Rica Mae Rapatan" class="profile-img-fluid bryl-monochrome-filter hero-img-light">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="playground" class="section-container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>The Neural Oracle <span style="font-size: 1.5rem;"></span></h2>
+        <!-- SERVICES SECTION -->
+        <section id="services" class="section-container main-section-block">
+            <div class="section-header-row">
+                <div class="section-meta">01 — Services</div>
+                <button class="see-all-trigger" data-target="services">See All Services <i class="fa-solid fa-arrow-right"></i></button>
             </div>
+            <h2 class="section-title">What I Can Do For You</h2>
             
-            <div class="oracle-container" data-aos="zoom-in">
-                <div class="oracle-ui-top">
-                    <p>Ask Yes or No Questions</p>
-                    
-                    <div class="oracle-input-wrapper">
-                        <span class="prompt-char">></span>
-                        <input type="text" id="oracle-input" placeholder="Try asking: 'Should I hire you?" autocomplete="off">
-                    </div>
+            <div class="matrix-grid">
+                <div class="matrix-card">
+                    <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Creating fast, modern, and easy-to-use websites tailored directly to your business goals. Designed to run smoothly on both phones and computers.</p>
                 </div>
-                
-                <div id="oracle-canvas"></div>
-                
-                <div id="oracle-text" class="neon-text">AWAITING INPUT...</div>
-                
-                <div class="oracle-hint">Press [ENTER] or Click the Core</div>
+                <div class="matrix-card">
+                    <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>Mobile Apps</h3>
+                    <p>Building reliable Android applications that load quickly, store data safely, and even work properly when offline.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>Designing interactive blueprints and user-friendly layouts in Figma so you can see exactly how your app looks before any code is written.</p>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="section-container">
-            <div class="contact-wrapper glass-panel" data-aos="zoom-in">
-                <div class="contact-info">
-                    <h2>Let's Connect</h2>
-                    <p>Have a project in mind? Let's build something extraordinary.</p>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
-                        <a href="mailto:rapatanricamae@gmail.com" class="email-display" style="margin-top: 0;">
-                            <i class="fa-solid fa-envelope"></i> rapatanricamae@gmail.com
-                        </a>
-                        
-                        <a href="tel:+63 916 1276 150" class="email-display" style="margin-top: 0;">
-                            <i class="fa-solid fa-phone"></i> +63 916 1276 150
-                        </a>
-        
-                        <a href="https://www.linkedin.com/in/rica-mae-rapatan-9153ab246/" target="_blank" rel="noopener noreferrer" class="email-display" style="margin-top: 0;">
-                            <i class="fa-brands fa-linkedin"></i> Rica Mae Rapatan
-                        </a>
+       <!-- WORK EXPERIENCE SECTION -->
+       <section id="experience" class="section-container line-dotted-matrix-runway main-section-block">
+            <div class="section-header-row">
+                <div class="section-meta">02 — Experience</div>
+                <button class="see-all-trigger" data-target="experience">See Full History <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <h2 class="section-title">Professional Path</h2>
 
-                        <a href="https://facebook.com/ricamae.rapatanii" target="_blank" rel="noopener noreferrer" class="email-display" style="margin-top: 0;">
-                            <i class="fa-brands fa-facebook"></i> Rica Mae Rapatan II
-                        </a>
-        
-                        <a href="https://instagram.com/aesricsthic_05" target="_blank" rel="noopener noreferrer" class="email-display" style="margin-top: 0;">
-                            <i class="fa-brands fa-instagram"></i> @aesricsthic_05
-                        </a>
+            <div class="experience-timeline-container">
+                <div class="experience-timeline-node">
+                    <div class="exp-timeline-meta">
+                        <span class="exp-timeline-year">Feb 2026 — Apr 2026</span>
+                        <div class="exp-verification-pouch">
+                            <span class="verification-badge-pill"><i class="fa-solid fa-circle-check"></i> VERIFIED INSTANCE</span>
+                            <span class="verify-tag-id">Ref ID: ZN-2026-884A</span>
+                        </div>
+                    </div>
+                    <div class="exp-timeline-content">
+                        <h3>IT Intern</h3>
+                        <p class="company-sub-label">Zionlab IT Consultancy</p>
+                        <p>Optimized database structure algorithms and minimized pipeline integration slowdowns during enterprise web software deployment tracking intervals.</p>
                     </div>
                 </div>
-    
-                <form id="contact-form" class="modern-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <div class="experience-timeline-node">
+                    <div class="exp-timeline-meta">
+                        <span class="exp-timeline-year">2024 — Present</span>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <div class="exp-timeline-content">
+                        <h3>Independent Freelance Developer</h3>
+                        <p class="company-sub-label">Web Applications & Layout Design Projects</p>
+                        <p>Constructed tailored client portals, landing frameworks, and clear application screens configured ahead of product coding deadlines.</p>
                     </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+                </div>
+            </div>
+        </section>
+
+       <!-- PROJECTS SECTION -->
+       <section id="projects" class="section-container main-section-block">
+            <div class="section-header-row">
+                <div class="section-meta">03 — Projects</div>
+                <button class="see-all-trigger" data-target="projects">See All Projects <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <h2 class="section-title">Featured Work</h2>
+            
+            <div class="projects-stack">
+                <div class="project-row">
+                    <div class="proj-meta-col">
+                        <span class="proj-number">03.1</span>
+                        <div class="proj-links">
+                            <a href="https://github.com/chubbyrics/CycleCare" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary full-width">Send Message</button>
-                    <div id="form-feedback" class="toast"></div>
+                    <div class="proj-desc-col">
+                        <h3>Cycle Care (Beta)</h3>
+                        <p>A specialized mobile medical telemetry health application engineered to track health cycles, manage trends, and optimize biometric tracking for individuals navigating PCOS indicators.</p>
+                        <div class="tag-row"><span>Android App</span><span>Java/Kotlin</span><span>Local SQLite</span></div>
+                    </div>
+                </div>
+
+                <div class="project-row">
+                    <div class="proj-meta-col">
+                        <span class="proj-number">03.2</span>
+                        <div class="proj-links">
+                            <a href="https://github.com/chubbyrics/PickleballEngine" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="proj-desc-col">
+                        <h3>Pickleball Court & Match Controller</h3>
+                        <p>A modular business operational engine featuring a custom real-time TypeScript scoring controller, structured court booking matrix loops, and an integrated point-of-sale module.</p>
+                        <div class="tag-row"><span>TypeScript</span><span>React Core</span><span>POS Inventory</span></div>
+                    </div>
+                </div>
+
+                <div class="project-row">
+                    <div class="proj-meta-col">
+                        <span class="proj-number">03.3</span>
+                        <div class="proj-links">
+                            <a href="https://github.com/chubbyrics/PopstarDrug" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="proj-desc-col">
+                        <h3>Popstar POS & Inventory System</h3>
+                        <p>A smart mobile application built for pharmacies to automatically track product inventory levels, manage sales logs, and prevent simple staff tracking mistakes.</p>
+                        <div class="tag-row"><span>Android App</span><span>Java</span><span>MySQL</span></div>
+                    </div>
+                </div>
+
+                <div class="project-row">
+                    <div class="proj-meta-col">
+                        <span class="proj-number">03.4</span>
+                        <div class="proj-links">
+                            <a href="https://github.com/chubbyrics/SignLanguageTranslator" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="proj-desc-col">
+                        <h3>Sign Language Translator</h3>
+                        <p>A smart camera tool that recognizes sign language gestures and translates them instantly on your mobile screen with zero delays.</p>
+                        <div class="tag-row"><span>Kotlin</span><span>TensorFlow Lite</span><span>OpenCV</span></div>
+                    </div>
+                </div>
+
+                <div class="project-row">
+                    <div class="proj-meta-col">
+                        <span class="proj-number">03.5</span>
+                        <div class="proj-links">
+                            <a href="https://github.com/chubbyrics/Student_Jobs" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="https://chubbyrics.github.io/Student_Jobs/" target="_blank"><i class="fa-solid fa-globe"></i> Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="proj-desc-col">
+                        <h3>Student Jobs Platform</h3>
+                        <p>A helpful website built to match student developers with businesses looking for tech help, making freelance communication smooth and simple.</p>
+                        <div class="tag-row"><span>React</span><span>Node.js</span><span>Firebase</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CREDENTIALS SECTION -->
+        <section id="credentials" class="section-container dotted-matrix-runway main-section-block">
+            <div class="section-header-row">
+                <div class="section-meta">04 — Credentials</div>
+                <button class="see-all-trigger" data-target="credentials">See All Credentials <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <h2 class="section-title">Certifications</h2>
+            
+            <div class="cred-showcase-matrix">
+                <div class="cred-visual-card verified-card">
+                    <div class="cred-image-frame">
+                        <img src="assets/Specialization Cybersecurity.png" alt="Google Cybersecurity Certificate Preview">
+                        <span class="verification-badge-label"><i class="fa-solid fa-circle-check"></i> VERIFIED SPECIALIZATION</span>
+                    </div>
+                    <div class="cred-details-pane">
+                        <div class="cred-top-meta">
+                            <span class="cred-year">Completed January 2025</span>
+                            <span class="verify-tag-id">Issuer: Google</span>
+                        </div>
+                        <h3>Google Cybersecurity Professional Certificate</h3>
+                        <p class="company-sub-label">Professional Specialization Track</p>
+                        <p>8-course comprehensive security program covering threat management, network architecture defense loops, asset diagnostic tasks, and Python automation modules.</p>
+                        <div class="action-row-inline" style="margin-top: 16px;">
+                            <a href="https://www.coursera.org/account/accomplishments/professional-cert/Q1B3CKWSI38J" target="_blank" class="btn-verify-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cred-visual-card verified-card">
+                    <div class="cred-image-frame">
+                        <img src="assets/Tech support.png" alt="Technical Support Fundamentals Preview">
+                        <span class="verification-badge-label"><i class="fa-solid fa-circle-check"></i> VERIFIED COURSE</span>
+                    </div>
+                    <div class="cred-details-pane">
+                        <div class="cred-top-meta">
+                            <span class="cred-year">Completed August 2025</span>
+                            <span class="verify-tag-id">Issuer: Google</span>
+                        </div>
+                        <h3>Technical Support Fundamentals</h3>
+                        <p class="company-sub-label">IT Infrastructure Foundations</p>
+                        <p>100% complete coursework covering core systems management, computer hardware assemblies, network troubleshooting matrices, and software environment layouts.</p>
+                        <div class="action-row-inline" style="margin-top: 16px;">
+                            <a href="https://www.coursera.org/account/accomplishments/verify/GKF8FPIKBR7Y" target="_blank" class="btn-verify-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section-container main-section-block">
+            <div class="section-meta">05 — Contact</div>
+            <h2 class="section-title">Let's Get In Touch</h2>
+            
+            <div class="contact-split">
+                <div class="contact-text-pane">
+                    <h3>Ready to upgrade your software systems?</h3>
+                    <p>Send over a message via the direct contact forms or connect directly using any of my official handles below:</p>
+                    <div class="terminal-links">
+                        <a href="mailto:rapatanricamae@gmail.com"><i class="fa-solid fa-envelope"></i> rapatanricamae@gmail.com</a>
+                        <a href="tel:+639161276150"><i class="fa-solid fa-phone"></i> +63 916 1276 150</a>
+                        <a href="https://www.linkedin.com/in/rica-mae-rapatan-9153ab246/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
+                        <a href="https://facebook.com/ricamae.rapatanii" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook Profile</a>
+                        <a href="https://instagram.com/aesricsthic_05" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram Profile</a>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="minimal-gate-form">
+                    <input type="text" id="name" placeholder="YOUR NAME" required>
+                    <input type="email" id="email" placeholder="YOUR EMAIL" required>
+                    <textarea id="message" rows="3" placeholder="HOW CAN I HELP YOU TODAY?" required></textarea>
+                    <button type="submit" class="btn btn-red full-width-btn">SEND MESSAGE</button>
+                    <div id="form-feedback" class="feedback-toast"></div>
                 </form>
             </div>
         </section>
+
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Rica Mae Rapatan. All rights reserved.</p>
+    <!-- SYSTEM CONSOLE CHAT ENGINE -->
+    <div id="ai-chat-widget">
+        <button id="ai-chat-toggle" aria-label="Open Smart Assistant Window"><i class="fa-solid fa-comments"></i></button>
+        <div id="ai-chat-window" class="chat-hidden">
+            <div class="chat-header">
+                <span>R-ENGINE INTEGRATED KNOWLEDGE KERNEL</span>
+                <button id="close-chat">&times;</button>
+            </div>
+            <div id="chat-logs" class="chat-body">
+                <div class="msg bot-msg">System initialized. Ask about Rica's code stack tools, hardware workstation setup, or cybersecurity certifications!</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" placeholder="Query profile details...">
+            </div>
         </div>
-    </footer>
+    </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="script.js" defer></script>
-    <script>
-        AOS.init({ offset: 50, duration: 1000 });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
